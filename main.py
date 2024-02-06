@@ -34,7 +34,12 @@ class Calculator(tk.Tk):
                 expression = self.result_var.get()
                 result = eval(expression)
                 self.result_var.set(result)
-
+                            except:
+                self.result_var.set("Error")
+        else:
+            current_text = self.result_var.get()
+            new_text = current_text + text
+            self.result_var.set(new_text)
 
 
 
