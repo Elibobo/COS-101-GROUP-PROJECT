@@ -28,6 +28,13 @@ class Calculator(tk.Tk):
             button = tk.Button(self, text=text, font=("Arial", 18), width=5, height=2, command=lambda t=text: self.on_button_click(t))
             button.grid(row=row, column=col)
 
+    def on_button_click(self, text):
+        if text == "=":
+            try:
+                expression = self.result_var.get()
+                result = eval(expression)
+                self.result_var.set(result)
+
 
 
 
